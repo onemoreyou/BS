@@ -1,48 +1,54 @@
 let OFFER = 5;
 let FLOW = 125;
 
-var form1 = document.querySelector('#form-1');
+let ipapiURL = 'https://ipapi.co/json/?key=861531b8c1d2314d1872eda57d819fb90ad8fc7c';
 
-form1.addEventListener("submit", function (e) {
+document.querySelector('#form-1').addEventListener("submit", function (e) {
     e.preventDefault();
-    pushLead(document.querySelector('#name-1').value,
-        document.querySelector('#email-1').value,
-        document.querySelector('#phone-1').value);
+    httpGetAsync(ipapiURL, (resp) => {
+        pushLead(document.querySelector('#name-1').value,
+            document.querySelector('#email-1').value,
+            document.querySelector('#phone-1').value,
+            JSON.parse(resp)['ip']);
+    });
 });
 
-var form2 = document.querySelector('#form-2');
-
-form2.addEventListener("submit", function (e) {
+document.querySelector('#form-2').addEventListener("submit", function (e) {
     e.preventDefault();
-    pushLead('',
-        '',
-        document.querySelector('#phone-2').value);
+    httpGetAsync(ipapiURL, (resp) => {
+        pushLead('',
+            '',
+            document.querySelector('#phone-2').value,
+            JSON.parse(resp)['ip']);
+    });
 });
 
-var form3 = document.querySelector('#form-3');
-
-form3.addEventListener("submit", function (e) {
+document.querySelector('#form-3').addEventListener("submit", function (e) {
     e.preventDefault();
-    pushLead(document.querySelector('#name-3').value,
-        document.querySelector('#email-3').value,
-        document.querySelector('#phone-3').value);
+    httpGetAsync(ipapiURL, (resp) => {
+        pushLead(document.querySelector('#name-3').value,
+            document.querySelector('#email-3').value,
+            document.querySelector('#phone-3').value,
+            JSON.parse(resp)['ip']);
+    });
 });
 
-var form4 = document.querySelector('#form-4');
-
-form4.addEventListener("submit", function (e) {
+document.querySelector('#form-4').addEventListener("submit", function (e) {
     e.preventDefault();
-    pushLead(document.querySelector('#name-4').value,
-        document.querySelector('#email-4').value,
-        document.querySelector('#phone-4').value);
+    httpGetAsync(ipapiURL, (resp) => {
+        pushLead(document.querySelector('#name-4').value,
+            document.querySelector('#email-4').value,
+            document.querySelector('#phone-4').value,
+            JSON.parse(resp)['ip']);
+    });
 });
 
-function pushLead(name, email, phone) {
+function pushLead(name, email, phone, ip) {
 
     let data = {
         flow: FLOW,
         offer: OFFER,
-        ip: window['userIP'],
+        ip: ip,
         name: name,
         email: email,
         phone: phone
@@ -61,4 +67,14 @@ function pushLead(name, email, phone) {
     };
 
     xhr.send(JSON.stringify(data));
+}
+
+function httpGetAsync(theUrl, callback) {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function () {
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            callback(xmlHttp.responseText);
+    }
+    xmlHttp.open("GET", theUrl, true); // true for asynchronous
+    xmlHttp.send(null);
 }
