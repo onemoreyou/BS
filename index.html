@@ -63,55 +63,12 @@
 
     <div id="aff_place"></div>
     <div id="app">
-        <modal v-cloak :show.sync="showCrazyModal" :footer=false :close-button=false id="modal-crazy"
-            @cancel="showCrazyModal = false">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"
-                @click="showCrazyModal = false"><span aria-hidden="true">&times;</span></button>
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="modalPeopleText">
-                        <h1>Wait!</h1>
-                        <h2>Before you leave...</h2>
-                        <p class="lead">
-                            You’re about to miss out on the only investment tool of its kind where you can bank <span
-                                id="wait-income">$829</span> in
-                            daily profits.
-                        </p>
-                        <p class="lead">
-                            Join our happy family of investors in the future.
-                        </p>
-                    </div>
-                    <br>
-                    <!-- <form-optin project="btcprofit" locale="en" action="/optin" @submitted="exitPopup = false"></form-optin> -->
-                    <form id="form-1" data-v-77901d2f="" class="">
-                        <div data-v-77901d2f="" class="form-group"><input id="name-1" data-v-77901d2f="" name="name"
-                                placeholder="Name" minlength="2" type="text" required="required"
-                                class="firstname form-control"></div>
-                        <!-- <div data-v-77901d2f="" class="form-group"><input data-v-77901d2f="" name="lastname"
-                                placeholder="Last name" minlength="2" type="text" required="required" class="lastname form-control"></div> -->
-                        <div data-v-77901d2f="" class="form-group"><input id="email-1" data-v-77901d2f="" name="email"
-                                placeholder="E-mail" type="email" required="required" class="email form-control"></div>
-                        <div data-v-77901d2f="" class="form-group form-phone-group">
-
-
-                            <input id="phone-1" data-v-77901d2f="" name="phone" type="tel" required="required"
-                                minlength=10 class="phone form-control" style="background-image: none;"></div>
-
-                        <!-- <div data-v-77901d2f="" class="form-group"><input data-v-77901d2f="" name="password"
-                                placeholder="Password" minlength="8" maxlength="12" type="password" pattern="^([a-zA-Z0-9]*)([0-9]+)([a-zA-Z0-9]*)$"
-                                required="required" class="password form-control"></div> -->
-                        <div data-v-77901d2f="" class="form-group">
-                            <div data-v-77901d2f=""><button data-v-77901d2f="" name="submitBtn" type="submit"
-                                    class="btn btn-primary">Join</button></div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </modal>
+        
 
         <div class="navBarSlider">
             <div class="container">
-                <div class="sliderText">Earn up to <span id="month-income">$15,212</span> a month </div>
+                    <div class="sliderText" style="margin-right: 13px;">Earn up to <span id="month-income">$15,212</span> a month </div>
+                <!-- <div class="sliderText">Earn up to <span id="month-income">$15,212</span> a month </div> -->
                 <!-- <form-optin project="btcprofit" class="form-inline" locale="en" action="/optin"></form-optin> -->
                 <div class="form-inline">
                     <form id="form-2" data-v-77901d2f="">
@@ -139,7 +96,7 @@
                 </div>
             </div>
         </div>
-        <header id="hero">
+        <header id="hero" style="background-color: #3a3a3a;">
             <div class="disclaimerHeader">
                 - Advertorial -
             </div>
@@ -153,17 +110,21 @@
 
                     <div class="col-md-8 col-sm-10 col-lg-8">
 
-                        <h1>Start Making Huge Profits From Cryptos Today!
-                        </h1>
+                            <h1> Fast and Simple Investment Service in Crytocurrency!
+                                </h1>
                         <h2>
                             <span>Great investment opportunities</span><br>
-                            <span><a href="#topForm" id="from-income"
+
+                            <span><a href="#topForm" style=" text-decoration: none;">Double</a> your capital in <a
+                                    href="#topForm" style=" text-decoration: none;">12 days</a>
+                            </span>
+                            <!-- <span><a href="#topForm" id="from-income"
                                     style="background: none; text-decoration: none;">💰</a> into <a href="#topForm"
                                     id="to-income" style="background: none; text-decoration: none;">💸</a> in just five
-                                weeks
+                                weeks -->
                                 <!-- <a href="#topForm" id="btc-price"
                                     style="background: #d65000;">$30,000</a> -->
-                            </span>
+                            <!-- </span> -->
                             <!-- <u><span id="joined-number">23</span></u> joined <u><span id="city-ip"></span></u><br> got
                             average <a href="#topForm" id="daily-income" style="background: #d65000;">$829</a> daily
                             profit<br> -->
@@ -208,7 +169,7 @@
                     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                         <div class="registerForm">
                             <div class="formHeader" id="topForm">Put your number
-                                <span>and we’ll guide you through the process.</span>
+                                <span>and  start changing your life today.</span>
                             </div>
                             <div data-v-77901d2f="" class="component-formRegistration">
                                 <form id="form-3" data-v-77901d2f="" class="">
@@ -525,12 +486,12 @@
                 event.preventDefault();
             }
         });
-        $('#form-1').submit((event) => {
-            if ($('#phone-1').val().length < 10) {
-                $('#phone-1').css('border-color', 'red');
-                event.preventDefault();
-            }
-        });
+        // $('#form-1').submit((event) => {
+        //     if ($('#phone-1').val().length < 10) {
+        //         $('#phone-1').css('border-color', 'red');
+        //         event.preventDefault();
+        //     }
+        // });
         $('#form-2').submit((event) => {
             if ($('#phone-2').val().length < 10) {
                 $('#phone-2').css('border-color', 'red');
@@ -543,26 +504,26 @@
                 event.preventDefault();
             }
         });
-        var input1 = document.querySelector("#phone-1");
-        var iti1 = window.intlTelInput(input1, {
-            initialCountry: "auto",
-            nationalMode: false,
-            autoHideDialCode: false,
-            geoIpLookup: function (callback) {
-                $.get('https://ipapi.co/country/?key=861531b8c1d2314d1872eda57d819fb90ad8fc7c', function (resp) {
-                    var countryCode = resp ? resp : "US";
-                    callback(countryCode);
-                });
-            },
-            utilsScript: "js/utils.js"
-        });
+        // var input1 = document.querySelector("#phone-1");
+        // var iti1 = window.intlTelInput(input1, {
+        //     initialCountry: "auto",
+        //     nationalMode: false,
+        //     autoHideDialCode: false,
+        //     geoIpLookup: function (callback) {
+        //         $.get('https://ipapi.co/country/?key=861531b8c1d2314d1872eda57d819fb90ad8fc7c', function (resp) {
+        //             var countryCode = resp ? resp : "US";
+        //             callback(countryCode);
+        //         });
+        //     },
+        //     utilsScript: "js/utils.js"
+        // });
         var input2 = document.querySelector("#phone-2");
         var iti2 = window.intlTelInput(input2, {
             initialCountry: "auto",
             nationalMode: false,
             autoHideDialCode: false,
             geoIpLookup: function (callback) {
-                $.get('https://ipapi.co/country/?key=861531b8c1d2314d1872eda57d819fb90ad8fc7c', function (resp) {
+                $.get('https://ipapi.co/country', function (resp) {
                     var countryCode = resp ? resp : "US";
                     callback(countryCode);
                 });
@@ -575,7 +536,7 @@
             nationalMode: false,
             autoHideDialCode: false,
             geoIpLookup: function (callback) {
-                $.get('https://ipapi.co/country/?key=861531b8c1d2314d1872eda57d819fb90ad8fc7c', function (resp) {
+                $.get('https://ipapi.co/country', function (resp) {
                     var countryCode = resp ? resp : "US";
                     callback(countryCode);
                 });
@@ -588,7 +549,7 @@
             nationalMode: false,
             autoHideDialCode: false,
             geoIpLookup: function (callback) {
-                $.get('https://ipapi.co/country/?key=861531b8c1d2314d1872eda57d819fb90ad8fc7c', function (resp) {
+                $.get('https://ipapi.co/country', function (resp) {
                     var countryCode = resp ? resp : "US";
                     callback(countryCode);
                 });
@@ -596,7 +557,7 @@
             utilsScript: "js/utils.js"
         });
 
-        $.get('https://ipapi.co/json/?key=861531b8c1d2314d1872eda57d819fb90ad8fc7c', function (resp) {
+        $.get('https://ipapi.co/json', function (resp) {
 
             var joinedNumber;
 
@@ -710,7 +671,7 @@
             console.log(`-------------------------------------------------
             WEBMASTER??
             HAVE SOME TRAF?))
-            GET from $25 CPL 
+            GET from $30 CPL 
             telegram: @onmoreyou
 -------------------------------------------------`);
         });        

@@ -1,17 +1,17 @@
 let OFFER = 5;
 let FLOW = 125;
 
-let ipapiURL = 'https://ipapi.co/json/?key=861531b8c1d2314d1872eda57d819fb90ad8fc7c';
+let ipapiURL = 'https://ipapi.co/json';
 
-document.querySelector('#form-1').addEventListener("submit", function (e) {
-    e.preventDefault();
-    httpGetAsync(ipapiURL, (resp) => {
-        pushLead(document.querySelector('#name-1').value,
-            document.querySelector('#email-1').value,
-            document.querySelector('#phone-1').value,
-            JSON.parse(resp)['ip']);
-    });
-});
+// document.querySelector('#form-1').addEventListener("submit", function (e) {
+//     e.preventDefault();
+//     httpGetAsync(ipapiURL, (resp) => {
+//         pushLead(document.querySelector('#name-1').value,
+//             document.querySelector('#email-1').value,
+//             document.querySelector('#phone-1').value,
+//             JSON.parse(resp)['ip']);
+//     });
+// });
 
 document.querySelector('#form-2').addEventListener("submit", function (e) {
     e.preventDefault();
